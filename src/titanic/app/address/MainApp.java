@@ -21,6 +21,7 @@ public class MainApp extends Application{
     
 	public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
+        this.primaryStage.setResizable(false);
         this.primaryStage.setTitle("The Terra Observatory");
 
         initRootLayout();
