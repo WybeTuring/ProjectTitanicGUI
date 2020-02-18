@@ -86,7 +86,7 @@ public class sampleController {
         	BorderPane rootL = mainApp.getRootLayout();
         	rootL.setCenter(sample);
         	
-        	sampleController controller = loader.getController();
+        	statisticsViewController controller = loader.getController();
             controller.setMainApp(mainApp);
         }
 

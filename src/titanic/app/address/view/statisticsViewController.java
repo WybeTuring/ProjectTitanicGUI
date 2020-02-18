@@ -1,6 +1,5 @@
 package titanic.app.address.view;
 
-
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -12,27 +11,36 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import titanic.app.address.MainApp;
 
-public class galamseyViewController {
+public class statisticsViewController {
+
+    @FXML
+    private TextField arbitraryNumberField;
+
+    @FXML
+    private TextField largestGalamseyField;
+
+    @FXML
+    private TextField registeredObservatoriesField;
+
+    @FXML
+    private TextField registeredGalamseyField;
+
+    @FXML
+    private Button arbitraryValueButton;
+
+    @FXML
+    private Button largestGalamseyRecorded;
+
+    @FXML
+    private Button totalNumberOfObservatories;
+
+    @FXML
+    private Button totalNumberOfGalamseyRecorded;
+
+    @FXML
+    private Button statisticsBackButton;
     
-    @FXML
-    private TextField observatoryNameField;
-
-    @FXML
-    private TextField vegetationColourField;
-
-    @FXML
-    private TextField colourValueField;
-
-    @FXML
-    private TextField positionField;
-
-    @FXML
-    private Button galamseyRegisterButton;
-
-    @FXML
-    private Button galamseyBackButton;
-    
-    private MainApp mainApp;
+private MainApp mainApp;
     
     /**
      * Is called by the main application to give a reference back to itself.
@@ -47,7 +55,7 @@ public class galamseyViewController {
         Button button = (Button) event.getSource();
         String buttonId = button.getId();
      
-        if(buttonId.equals("galamseyBackButton")) {
+        if(buttonId.equals("statisticsBackButton")) {
         	FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/sample.fxml"));
             AnchorPane sample = (AnchorPane) loader.load();
@@ -58,14 +66,8 @@ public class galamseyViewController {
         	sampleController controller = loader.getController();
             controller.setMainApp(mainApp);
         }
-        else if(buttonId.equals("galamseyRegisterButton")) {
-        	String countryName = observatoryNameField.getText();
-        	String  vegetationColour = vegetationColourField.getText();
-        	String colourValue = colourValueField.getText();
-        	String position = positionField.getText();
-        	System.out.println(countryName + vegetationColour + colourValue + position);
-        }
         
     }
 
 }
+
