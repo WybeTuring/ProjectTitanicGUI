@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import titanic.app.address.MainApp;
@@ -41,8 +42,9 @@ public class observatoryViewController {
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
     }
+    
 	@FXML
-    void chooseViewAction(ActionEvent event) throws IOException {
+    public void chooseViewAction(ActionEvent event) throws IOException {
         Button button = (Button) event.getSource();
         String buttonId = button.getId();
         
@@ -57,20 +59,14 @@ public class observatoryViewController {
         	sampleController controller = loader.getController();
             controller.setMainApp(mainApp);
         }
-        else if(buttonId.equals("registerGalamseyEventButton")) {
-        	FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/galamseyView.fxml"));
-            AnchorPane sample = (AnchorPane) loader.load();
-            
-        	BorderPane rootL = mainApp.getRootLayout();
-        	rootL.setCenter(sample);
-        	
-        	sampleController controller = loader.getController();
-            controller.setMainApp(mainApp);
-       
-
+        
     }
-    }
+	
+	@FXML
+	private void newButtonClick(MouseEvent event){
+		String temp = countryNameField.getText();
+		System.out.println(temp);
+	}
 
 
 }

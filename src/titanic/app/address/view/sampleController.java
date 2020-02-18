@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import titanic.app.address.MainApp;
 
 
@@ -88,6 +89,12 @@ public class sampleController {
         	
         	statisticsViewController controller = loader.getController();
             controller.setMainApp(mainApp);
+        }
+        else if(buttonId.equals("exitButton")) {
+        	// get a handle to the stage
+            Stage stage = (Stage) exitButton.getScene().getWindow();
+            // do what you have to do
+            stage.close();
         }
 
     }
