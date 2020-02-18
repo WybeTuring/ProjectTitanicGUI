@@ -69,7 +69,7 @@
                                 <Image url="@iconfinder_thefreeforty_register_1243707.png" />
                             </image>
                      </ImageView>
-                        <Button fx:id="galamseyRegisterButton" layoutX="253.0" layoutY="687.0" mnemonicParsing="false" onMouseClicked="#chooseViewAction" prefHeight="52.0" prefWidth="291.0" style="-fx-background-color: #696969;" text="Register" textAlignment="CENTER" textFill="#fdf7f7">
+                        <Button fx:id="galamseyRegisterButton" layoutX="253.0" layoutY="687.0" mnemonicParsing="false" onMouseClicked="#newButtonClickss" prefHeight="52.0" prefWidth="291.0" style="-fx-background-color: #696969;" text="Register" textAlignment="CENTER" textFill="#fdf7f7">
                             <font>
                                 <Font size="16.0" />
                             </font>

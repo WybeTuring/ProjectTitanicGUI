@@ -89,19 +89,53 @@ public class observatoryViewController {
 	
 	@FXML
 	private void newButtonClick(MouseEvent event){
+		
 		String observatoryName = observatoryNameField.getText();
 		String countryName = countryNameField.getText();
 		String yearStarted = yearStartedField.getText();
 		String squareArea = squareAreaField.getText();
-		if(!isNumeric(yearStarted) || !isNumeric(squareArea)) {
+		
+		// Validating the user input.
+		if(observatoryName.equals("") || countryName.equals("") || yearStarted.equals("") || squareArea.equals("")) {
 			Alert alert = new Alert(AlertType.NONE);
 			alert.setAlertType(AlertType.ERROR);
-			alert.setContentText("Year & Square Area must be numbers");
+			alert.setContentText("Please enter all fields.");
+			alert.showAndWait();
+			if(!observatoryName.equals("")) {
+				nameCheckbox.setSelected(true);
+			}
+			if(!countryName.equals("")) {
+				countryCheckbox.setSelected(true);
+			}
+			if(!yearStarted.equals("") && isNumeric(yearStarted) ) {
+				yearCheckbox.setSelected(true);
+			}
+			if(!yearStarted.equals("") && !isNumeric(yearStarted) ) {
+				yearStartedField.setText("");
+			}
+			if(!squareArea.equals("") && isNumeric(squareArea)) {
+				areaCheckbox.setSelected(true);
+			}
+			if(!squareArea.equals("") && !isNumeric(squareArea)) {
+				squareAreaField.setText("");
+			}
+		}
+		else if(!isNumeric(yearStarted) || !isNumeric(squareArea)) {
+			Alert alert = new Alert(AlertType.NONE);
+			alert.setAlertType(AlertType.ERROR);
+			alert.setContentText("Year & Square Area must be numbers.");
 			alert.showAndWait();
 			observatoryNameField.setText("");
 			countryNameField.setText("");
 			yearStartedField.setText("");
 			squareAreaField.setText("");
+		}
+		else if(yearStarted.length() != 4){
+			Alert alert = new Alert(AlertType.NONE);
+			alert.setAlertType(AlertType.ERROR);
+			alert.setContentText("A year is 4 digits long.");
+			alert.showAndWait();
+			yearStartedField.setText("");
 		}
 		else {
 			nameCheckbox.setSelected(true);

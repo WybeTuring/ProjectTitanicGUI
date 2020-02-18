@@ -5,9 +5,11 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import titanic.app.address.MainApp;
@@ -16,21 +18,36 @@ public class galamseyViewController {
     
     @FXML
     private TextField observatoryNameField;
+    
+    @FXML
+    private CheckBox observatoryCheckbox;
 
     @FXML
     private TextField vegetationColourField;
+    
+    @FXML
+    private CheckBox vegetationCheckbox;
 
     @FXML
     private TextField colourValueField;
+    
+    @FXML
+    private CheckBox colourCheckbox;
 
     @FXML
     private TextField latitudeField;
+    
+    @FXML
+    private CheckBox latitudeCheckbox;
 
     @FXML
     private Button galamseyRegisterButton;
 
     @FXML
     private TextField longitudeField;
+    
+    @FXML
+    private CheckBox longitudeCheckbox;
 
     @FXML
     private Button galamseyBackButton;
@@ -61,15 +78,15 @@ public class galamseyViewController {
         	sampleController controller = loader.getController();
             controller.setMainApp(mainApp);
         }
-        else if(buttonId.equals("galamseyRegisterButton")) {
-        	String countryName = observatoryNameField.getText();
-        	String  vegetationColour = vegetationColourField.getText();
-        	String colourValue = colourValueField.getText();
-        	String latitude = latitudeField.getText();
-        	String longitude = longitudeField.getText();
-       
-        }
-        
+    }
+    
+    public void newButtonClick(MouseEvent event) {
+    	
+    	String observatoryName = observatoryNameField.getText();
+    	String  vegetationColour = vegetationColourField.getText();
+    	String colourValue = colourValueField.getText();
+    	String latitude = latitudeField.getText();
+    	String longitude = longitudeField.getText();
     }
 
 }
