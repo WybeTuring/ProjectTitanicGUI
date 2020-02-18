@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="820.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="titanic.app.address.view.sampleController">
+	<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="875.0" prefWidth="1400.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+	   <children>
+	      <MenuBar prefHeight="36.0" prefWidth="740.0" style="-fx-background-color: #696969;">
+	        <menus>
+	          <Menu mnemonicParsing="false" text="File">
+	            <items>
+	              <MenuItem mnemonicParsing="false" text="Print" />
+	            </items>
+	          </Menu>
+	          <Menu mnemonicParsing="false" text="Help">
+	            <items>
+	              <MenuItem mnemonicParsing="false" text="About" />
+	            </items>
+	          </Menu>
+	        </menus>
+	         <effect>
+	            <ColorAdjust />
+	         </effect>
+	      </MenuBar>
+	      <AnchorPane prefHeight="845.0" prefWidth="1400.0">
+	         <children>
+	            <ImageView fitHeight="549.0" fitWidth="513.0" layoutX="847.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+	               <image>
+	                  <Image url="@The%20Brothers%20(1).png" />
+	               </image></ImageView>
+	            <Button fx:id="registeringObservatory" layoutX="186.0" layoutY="159.0" mnemonicParsing="false" onAction="#chooseViewAction" onMouseClicked="#chooseViewAction" prefHeight="104.0" prefWidth="370.0" style="-fx-background-color: #800000;" text="Register an Observatory" textFill="#f0e7e7">
+	               <font>
+	                  <Font name="Times New Roman" size="16.0" />
+	               </font></Button>
+	            <Button fx:id="registerGalamseyEventButton" layoutX="186.0" layoutY="317.0" mnemonicParsing="false" onAction="#chooseViewAction" onMouseClicked="#chooseViewAction" prefHeight="104.0" prefWidth="370.0" style="-fx-background-color: #800000;" text="Register Galamsey Events" textFill="#f2eded">
+	               <font>
+	                  <Font name="Times New Roman" size="16.0" />
+	               </font></Button>
+	            <Button fx:id="seeStatisticsButton" layoutX="186.0" layoutY="500.0" mnemonicParsing="false" onAction="#chooseViewAction" onMouseClicked="#chooseViewAction" prefHeight="104.0" prefWidth="370.0" style="-fx-background-color: #800000;" text="See Statistics" textFill="#f8f3f3">
+	               <font>
+	                  <Font name="Times New Roman" size="16.0" />
+	               </font></Button>
+	            <ButtonBar layoutX="944.0" layoutY="653.0" prefHeight="84.0" prefWidth="391.0">
+	              <buttons>
+	                <Button fx:id="exitButton" mnemonicParsing="false" prefHeight="10.0" style="-fx-background-color: #800000;" text="Exit" textFill="#f5f0f0">
+	                     <font>
+	                        <Font size="16.0" />
+	                     </font>
+	                  </Button>
+	              </buttons>
+	            </ButtonBar>
+	            <Label layoutX="556.0" layoutY="29.0" prefHeight="113.0" prefWidth="552.0" text="WELCOME TO THE TERRA OBSERVATORY" textFill="#1c0202">
+	               <font>
+	                  <Font name="Verdana Bold" size="18.0" />
+	               </font>
+	            </Label>
+	            <ImageView fitHeight="134.0" fitWidth="249.0" layoutX="304.0" layoutY="9.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+	               <image>
+	                  <Image url="@iconfinder_Sed-15_2231957.png" />
+	               </image>
+	            </ImageView>
+	         </children></AnchorPane>
+	   </children>
+	</VBox>
+</AnchorPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="820.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="titanic.app.address.view.sampleController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar style="-fx-background-color: #696969;">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="513.0" prefWidth="742.0" style="-fx-background-color: #A9A9A9;">
+         <children>
+            <AnchorPane layoutX="202.0" prefHeight="514.0" prefWidth="538.0" style="-fx-background-color: #800000;">
+               <children>
+                  <Separator layoutY="256.0" prefHeight="6.0" prefWidth="538.0" />
+                  <TextArea layoutX="14.0" layoutY="10.0" prefHeight="237.0" prefWidth="510.0" />
+                  <TextArea layoutX="14.0" layoutY="269.0" prefHeight="238.0" prefWidth="510.0" />
+                  <ScrollBar layoutX="509.0" layoutY="9.0" orientation="VERTICAL" prefHeight="238.0" prefWidth="14.0" style="-fx-background-color: #800000;" />
+                  <ScrollBar layoutX="518.0" layoutY="362.0" orientation="VERTICAL" prefHeight="238.0" prefWidth="14.0" style="-fx-background-color: #800000;" />
+               </children></AnchorPane>
+            <AnchorPane layoutX="-2.0" layoutY="1.0" prefHeight="514.0" prefWidth="202.0">
+               <children>
+                  <ImageView fitHeight="194.0" fitWidth="200.0" layoutX="1.0" layoutY="14.0" opacity="0.82" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@iconfinder_statistics_2639926.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="194.0" fitWidth="162.0" layoutX="14.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@The%20Brothers%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="24.0" layoutY="447.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="162.0" style="-fx-background-color: #696969;" text="Bye Bye" textFill="#f5efef">
+                     <font>
+                        <Font name="Verdana Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+</VBox>
+</AnchorPane>
