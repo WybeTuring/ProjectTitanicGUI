@@ -92,7 +92,7 @@
                      </image></ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="700.0" layoutY="-1.0" prefHeight="794.0" prefWidth="694.0" style="-fx-background-image: #F5F5F5;">
+            <AnchorPane layoutX="700.0" layoutY="-1.0" prefHeight="794.0" prefWidth="694.0">
                <children>
                   <Button fx:id="backButton" layoutX="317.0" layoutY="697.0" mnemonicParsing="false" onAction="#chooseViewAction" onMouseClicked="#chooseViewAction" prefHeight="43.0" prefWidth="200.0" style="-fx-background-color: #696969;" text="Back" textFill="#f8f5f5">
                      <font>

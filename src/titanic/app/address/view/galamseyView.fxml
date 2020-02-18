@@ -81,7 +81,7 @@
                         </Button>
                     </children>
                 </AnchorPane>
-                <AnchorPane layoutX="908.0" layoutY="1.0" prefHeight="778.0" prefWidth="502.0" style="-fx-background-image: #F5F5F5;">
+                <AnchorPane layoutX="908.0" layoutY="1.0" prefHeight="778.0" prefWidth="502.0">
                     <children>
                         <ImageView fitHeight="442.0" fitWidth="427.0" layoutX="45.0" layoutY="132.0" opacity="0.34" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 50;">
                             <image>
