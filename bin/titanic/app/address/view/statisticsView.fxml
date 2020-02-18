@@ -15,10 +15,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="820.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="titanic.app.address.view.statisticsViewController">
+<AnchorPane prefHeight="820.0" prefWidth="1400.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="titanic.app.address.view.statisticsViewController">
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="1400.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <MenuBar prefHeight="26.0" prefWidth="1472.0" style="-fx-background-color: #696969;">
+      <MenuBar prefHeight="26.0" prefWidth="1472.0" style="-fx-background-color: #A9A9A9;">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -34,7 +34,7 @@
       </MenuBar>
       <AnchorPane prefHeight="820.0" prefWidth="1400.0" style="-fx-background-color: #A9A9A9;">
          <children>
-            <AnchorPane layoutX="641.0" layoutY="-1.0" prefHeight="764.0" prefWidth="689.0" style="-fx-background-color: #800000;">
+            <AnchorPane layoutX="641.0" layoutY="-1.0" prefHeight="764.0" prefWidth="752.0" style="-fx-background-color: #800000;">
                <children>
                   <Separator layoutY="400.0" prefHeight="0.0" prefWidth="969.0" />
                   <TextArea layoutX="14.0" layoutY="10.0" prefHeight="388.0" prefWidth="686.0" />
@@ -64,21 +64,6 @@
                         <Font name="Times New Roman Bold" size="20.0" />
                      </font>
                      </TextField>
-                  <TextField fx:id="largestGalamseyField" layoutX="325.0" layoutY="513.0" prefHeight="40.0" prefWidth="160.0" promptText="see results">
-                     <font>
-                        <Font name="Times New Roman Bold" size="20.0" />
-                     </font>
-                     </TextField>
-                  <TextField fx:id="registeredObservatoriesField" layoutX="325.0" layoutY="586.0" prefHeight="40.0" prefWidth="160.0" promptText="see results">
-                     <font>
-                        <Font name="Times New Roman Bold" size="20.0" />
-                     </font>
-                     </TextField>
-                  <TextField fx:id="registeredGalamseyField" layoutX="325.0" layoutY="664.0" onAction="#chooseViewAction" prefHeight="40.0" prefWidth="160.0" promptText="see reults">
-                     <font>
-                        <Font name="Times New Roman Bold" size="20.0" />
-                     </font>
-                     </TextField>
                   <Button fx:id="arbitraryValueButton" layoutX="531.0" layoutY="432.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #696969;" text="Go" textFill="#faf5f5">
                      <font>
                         <Font name="Times New Roman Bold" size="18.0" />
@@ -99,6 +84,9 @@
                         <Font name="Times New Roman Bold" size="18.0" />
                      </font>
                   </Button>
+                     <Label fx:id="largestGalamseyLabel" layoutX="320.0" layoutY="514.0" prefHeight="40.0" prefWidth="160.0" />
+                     <Label fx:id="registeredObservatoryLabel" layoutX="324.0" layoutY="586.0" prefHeight="40.0" prefWidth="162.0" />
+                     <Label fx:id="registeredGalamseyLabel" layoutX="324.0" layoutY="664.0" prefHeight="40.0" prefWidth="162.0" />
                </children>
                </AnchorPane>
             <AnchorPane layoutX="-2.0" layoutY="1.0" prefHeight="764.0" prefWidth="642.0">

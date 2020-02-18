@@ -24,10 +24,13 @@ public class galamseyViewController {
     private TextField colourValueField;
 
     @FXML
-    private TextField positionField;
+    private TextField latitudeField;
 
     @FXML
     private Button galamseyRegisterButton;
+
+    @FXML
+    private TextField longitudeField;
 
     @FXML
     private Button galamseyBackButton;
@@ -62,8 +65,9 @@ public class galamseyViewController {
         	String countryName = observatoryNameField.getText();
         	String  vegetationColour = vegetationColourField.getText();
         	String colourValue = colourValueField.getText();
-        	String position = positionField.getText();
-        	System.out.println(countryName + vegetationColour + colourValue + position);
+        	String latitude = latitudeField.getText();
+        	String longitude = longitudeField.getText();
+       
         }
         
     }

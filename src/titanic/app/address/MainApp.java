@@ -8,12 +8,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import titanic.app.address.model.Monitoring;
 import titanic.app.address.view.sampleController;
 
 public class MainApp extends Application{
 
     private Stage primaryStage;
     private BorderPane rootLayout;
+    private Monitoring CentralMonitor;
     
     public MainApp() {
     	

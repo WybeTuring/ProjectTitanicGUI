@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -15,15 +16,6 @@ public class statisticsViewController {
 
     @FXML
     private TextField arbitraryNumberField;
-
-    @FXML
-    private TextField largestGalamseyField;
-
-    @FXML
-    private TextField registeredObservatoriesField;
-
-    @FXML
-    private TextField registeredGalamseyField;
 
     @FXML
     private Button arbitraryValueButton;
@@ -36,6 +28,15 @@ public class statisticsViewController {
 
     @FXML
     private Button totalNumberOfGalamseyRecorded;
+
+    @FXML
+    private Label largestGalamseyLabel;
+
+    @FXML
+    private Label registeredObservatoryLabel;
+
+    @FXML
+    private Label registeredGalamseyLabel;
 
     @FXML
     private Button statisticsBackButton;
