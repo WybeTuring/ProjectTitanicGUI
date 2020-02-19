@@ -37,7 +37,7 @@
             <AnchorPane layoutX="641.0" layoutY="-1.0" prefHeight="764.0" prefWidth="752.0" style="-fx-background-color: #800000;">
                <children>
                   <Separator layoutY="400.0" prefHeight="0.0" prefWidth="969.0" />
-                  <TextArea layoutX="14.0" layoutY="10.0" prefHeight="388.0" prefWidth="686.0" />
+                  <TextArea fx:id="resultsTestArea" layoutX="14.0" layoutY="10.0" prefHeight="388.0" prefWidth="686.0" />
                   <ScrollBar layoutX="948.0" layoutY="10.0" orientation="VERTICAL" prefHeight="388.0" prefWidth="14.0" style="-fx-background-color: #800000;" />
                   <Label layoutX="14.0" layoutY="422.0" prefHeight="60.0" prefWidth="226.0" text="Enter arbitrary value" textAlignment="JUSTIFY" textFill="#fdf3f3">
                      <font>
@@ -64,22 +64,22 @@
                         <Font name="Times New Roman Bold" size="20.0" />
                      </font>
                      </TextField>
-                  <Button fx:id="arbitraryValueButton" layoutX="531.0" layoutY="432.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #696969;" text="Go" textFill="#faf5f5">
+                  <Button fx:id="arbitraryValueButton" layoutX="531.0" layoutY="432.0" mnemonicParsing="false" onMouseClicked="#newButtonClick" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #696969;" text="Go" textFill="#faf5f5">
                      <font>
                         <Font name="Times New Roman Bold" size="18.0" />
                      </font>
                      </Button>
-                  <Button fx:id="largestGalamseyRecorded" layoutX="531.0" layoutY="513.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #696969;" text="View" textFill="#f2eded">
+                  <Button fx:id="largestGalamseyRecorded" layoutX="531.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#newButtonClick" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #696969;" text="View" textFill="#f2eded">
                      <font>
                         <Font name="Times New Roman Bold" size="18.0" />
                      </font>
                      </Button>
-                  <Button fx:id="totalNumberOfObservatories" layoutX="531.0" layoutY="586.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #696969;" text="View" textFill="#faf3f3">
+                  <Button fx:id="totalNumberOfObservatories" layoutX="531.0" layoutY="586.0" mnemonicParsing="false" onMouseClicked="#newButtonClick" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #696969;" text="View" textFill="#faf3f3">
                      <font>
                         <Font name="Times New Roman Bold" size="18.0" />
                      </font>
                      </Button>
-                  <Button fx:id="totalNumberOfGalamseyRecorded" layoutX="531.0" layoutY="664.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #696969;" text="View" textFill="#faf3f3">
+                  <Button fx:id="totalNumberOfGalamseyRecorded" layoutX="531.0" layoutY="664.0" mnemonicParsing="false" onMouseClicked="#newButtonClick" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #696969;" text="View" textFill="#faf3f3">
                      <font>
                         <Font name="Times New Roman Bold" size="18.0" />
                      </font>

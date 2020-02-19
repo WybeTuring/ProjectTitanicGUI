@@ -15,7 +15,6 @@ public class MainApp extends Application{
 
     private Stage primaryStage;
     private BorderPane rootLayout;
-    private Monitoring CentralMonitor;
     
     public MainApp() {
     	
@@ -79,6 +78,7 @@ public class MainApp extends Application{
     public BorderPane getRootLayout() {
     	return rootLayout;
     }
+    
     
     public static void main(String[] args) {
         launch(args);

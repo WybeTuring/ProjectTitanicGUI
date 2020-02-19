@@ -15,7 +15,7 @@ import java.util.ArrayList;
 		 * default constructor
 		 */
 		public Monitoring() {
-			
+			this.observatoryList = new ArrayList<Observatory>();
 		}
 		
 		/**
@@ -109,6 +109,14 @@ import java.util.ArrayList;
 			}
 			observatoryList.add(newObservatory);
 			return true;
+		}
+		
+		public int numGalamsey() {
+			int count = 0;
+			for(Observatory e: this.observatoryList) {
+				count += e.getListGalamObserv().size();
+			}
+			return count;
 		}
 		
 }

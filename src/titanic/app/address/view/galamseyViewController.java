@@ -2,7 +2,9 @@ package titanic.app.address.view;
 
 
 import java.io.IOException;
+import java.sql.*;
 
+import dbconnection.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
@@ -15,6 +17,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import titanic.app.address.MainApp;
+import titanic.app.address.model.Galamsey;
+import titanic.app.address.model.Observatory;
+import titanic.app.address.model.Position;
 
 public class galamseyViewController {
     
@@ -48,6 +53,12 @@ public class galamseyViewController {
     @FXML
     private TextField longitudeField;
     
+    @FXML 
+    private TextField yearField;
+    
+    @FXML
+    private CheckBox yearCheckbox;
+    
     @FXML
     private CheckBox longitudeCheckbox;
 
@@ -55,6 +66,8 @@ public class galamseyViewController {
     private Button galamseyBackButton;
     
     private MainApp mainApp;
+    
+    private DatabaseConnection dataBase = new DatabaseConnection();
     
     /**
      * Is called by the main application to give a reference back to itself.
@@ -98,12 +111,13 @@ public class galamseyViewController {
     	String colourValue = colourValueField.getText();
     	String latitude = latitudeField.getText();
     	String longitude = longitudeField.getText();
+    	String year = yearField.getText();
     	
     	
     	
     	// Validating the user input from the register Galamsey page
     	
-    	if(observatoryName.equals("") || vegetationColour.equals("") || colourValue.equals("") || latitude.equals("") || longitude.equals("")) {
+    	if(observatoryName.equals("") || year.equals("") || vegetationColour.equals("") || colourValue.equals("") || latitude.equals("") || longitude.equals("")) {
     		Alert alert = new Alert(AlertType.NONE);
 			alert.setAlertType(AlertType.ERROR);
 			alert.setContentText("Please enter all fields.");
@@ -139,7 +153,7 @@ public class galamseyViewController {
 			alert1.showAndWait();
 			vegetationColourField.setText("");
     	}
-    	else if(!(Double.parseDouble(colourValue) == 1 || colourValue == "2" || colourValue == "3")) {
+    	else if(Double.parseDouble(colourValue) != 1 && Double.parseDouble(colourValue) != 2 && Double.parseDouble(colourValue) == 3) {
     		Alert alert1 = new Alert(AlertType.NONE);
 			alert1.setAlertType(AlertType.ERROR);
 			alert1.setContentText("Colour Values can only be 1, 2, or 3");
@@ -154,6 +168,13 @@ public class galamseyViewController {
 			latitudeField.setText("");
 			longitudeField.setText("");
     	}
+    	else if(!isNumeric(year)) {
+    		Alert alert1 = new Alert(AlertType.NONE);
+			alert1.setAlertType(AlertType.ERROR);
+			alert1.setContentText("Years must be numbers.");
+			alert1.showAndWait();
+			latitudeField.setText("");
+    	}
     	// The block in which everything has been validated
     	else {
     		colourCheckbox.setSelected(true);
@@ -161,9 +182,15 @@ public class galamseyViewController {
     		vegetationCheckbox.setSelected(true);
     		longitudeCheckbox.setSelected(true);
     		latitudeCheckbox.setSelected(true);
+    		yearCheckbox.setSelected(true);
+    		Position pos = new Position(Double.parseDouble(latitude), Double.parseDouble(longitude));
+    		Galamsey obs = new Galamsey(vegetationColour, Integer.parseInt(colourValue), pos, Integer.parseInt(year));
+    		dataBase.registerGalamseyEvents(observatoryName, obs.getVegetationColour(), obs.getColourValue(), obs.getPosition().getLatitude(), obs.getPosition().getLongitude(), obs.getYear());
     		
     		// Process the values obtained
-    		
+    		Alert alert = new Alert(AlertType.CONFIRMATION);
+			alert.setContentText("Successfully registered");
+			alert.showAndWait();
     		
     		// Clear the fields
     		vegetationColourField.setText("");
@@ -171,8 +198,13 @@ public class galamseyViewController {
 			longitudeField.setText("");
 			colourValueField.setText("");
 			observatoryNameField.setText("");
+			yearField.setText("");
     		
     	}
+    	
+    	
     }
+	
+
 
 }

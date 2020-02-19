@@ -65,6 +65,7 @@ public class Observatory {
         this.countryName = countryName;
         this.startingYear = yearSiteGalam;
         this.areaCovered = area;
+
     }
  
     /**

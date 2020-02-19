@@ -69,7 +69,7 @@
                                 <Image url="@iconfinder_thefreeforty_register_1243707.png" />
                             </image>
                      </ImageView>
-                        <Button fx:id="galamseyRegisterButton" layoutX="253.0" layoutY="687.0" mnemonicParsing="false" onMouseClicked="#newButtonClick" prefHeight="52.0" prefWidth="291.0" style="-fx-background-color: #696969;" text="Register" textAlignment="CENTER" textFill="#fdf7f7">
+                        <Button fx:id="galamseyRegisterButton" layoutX="724.0" layoutY="682.0" mnemonicParsing="false" onMouseClicked="#newButtonClick" prefHeight="52.0" prefWidth="116.0" style="-fx-background-color: #696969;" text="Register" textAlignment="CENTER" textFill="#fdf7f7">
                             <font>
                                 <Font size="16.0" />
                             </font>
@@ -85,6 +85,16 @@
                         </font>
                      </CheckBox>
                      <CheckBox fx:id="latitudeCheckbox" layoutX="491.0" layoutY="475.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="237.0" text="Latitude" textFill="#ede8e8">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </CheckBox>
+                     <TextField fx:id="yearField" layoutX="113.0" layoutY="656.0" prefHeight="52.0" prefWidth="260.0" promptText="year">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </TextField>
+                     <CheckBox fx:id="yearCheckbox" layoutX="491.0" layoutY="652.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="203.0" text="year" textFill="#ede8e8">
                         <font>
                            <Font size="16.0" />
                         </font>

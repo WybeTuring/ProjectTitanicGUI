@@ -14,6 +14,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import titanic.app.address.MainApp;
+import titanic.app.address.model.Observatory;
+
+import java.sql.*;
+
+import dbconnection.DatabaseConnection;
+
 
 public class observatoryViewController {
 
@@ -44,6 +50,7 @@ public class observatoryViewController {
     @FXML
     private CheckBox areaCheckbox;
     
+    private DatabaseConnection dataBase = new DatabaseConnection();
 
     @FXML
     private Button backButton;
@@ -125,8 +132,6 @@ public class observatoryViewController {
 			alert.setAlertType(AlertType.ERROR);
 			alert.setContentText("Year & Square Area must be numbers.");
 			alert.showAndWait();
-			observatoryNameField.setText("");
-			countryNameField.setText("");
 			yearStartedField.setText("");
 			squareAreaField.setText("");
 		}
@@ -148,6 +153,11 @@ public class observatoryViewController {
 			alert.setContentText("Successfully registered");
 			alert.showAndWait();
 			
+			// Creating the database connection and using it to insert the data that the user has entered.
+			Observatory obs = new Observatory(observatoryName, countryName, Integer.parseInt(yearStarted), Double.parseDouble(squareArea));
+			
+			dataBase.registerObservatories(obs.getNameofObservatory(), obs.getCountryName(), obs.getStartingYear(), (float)obs.getAreaCovered());
+			
 			// Setting all textfields back to nothing.
 			observatoryNameField.setText("");
 			countryNameField.setText("");
@@ -161,5 +171,7 @@ public class observatoryViewController {
 	}
 
 
+
+	
 }
 
