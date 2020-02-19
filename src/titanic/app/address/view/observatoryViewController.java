@@ -22,7 +22,7 @@ import dbconnection.DatabaseConnection;
 
 /**
  * 
- * @author wybeturing
+ * @author wybeturing, Kweku Yamoah
  *
  */
 public class observatoryViewController {
