@@ -8,7 +8,7 @@ Data persistence is achieved through the use of a database. This means that as t
 For anyone hoping to run this application on their local servers, the following requirements must be met;
 1. Must have a running MySQL server
 2. Must create a database user with the credentialas, user = root, password = 'root'
-3. Must run the script DATABASECREATION.sql included in this repository to create the required database to which the connection will be made. 
+3. Must run the script PROJECT.sql included in this repository to create the required database to which the connection will be made. 
 
 The software specification is as follows;
 
