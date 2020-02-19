@@ -20,7 +20,11 @@ import java.sql.*;
 
 import dbconnection.DatabaseConnection;
 
-
+/**
+ * 
+ * @author wybeturing
+ *
+ */
 public class observatoryViewController {
 
     @FXML
