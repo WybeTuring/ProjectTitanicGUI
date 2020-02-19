@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="845.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="titanic.app.address.view.observatoryViewController">
-   <MenuBar prefHeight="863.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+   <MenuBar prefHeight="863.0" prefWidth="1400.0" style="-fx-background-color: #A9A9A9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
      <menus>
        <Menu mnemonicParsing="false" text="File">
          <items>
@@ -42,46 +42,46 @@
                <children>
                   <TextField fx:id="observatoryNameField" layoutX="78.0" layoutY="200.0" prefHeight="60.0" prefWidth="260.0" promptText="name of observatory">
                      <font>
-                        <Font name="Times New Roman" size="20.0" />
+                        <Font size="16.0" />
                      </font>
                   </TextField>
                   <TextField fx:id="countryNameField" layoutX="78.0" layoutY="319.0" prefHeight="60.0" prefWidth="260.0" promptText="country">
                      <font>
-                        <Font name="Times New Roman" size="20.0" />
+                        <Font size="16.0" />
                      </font></TextField>
                   <TextField fx:id="yearStartedField" layoutX="78.0" layoutY="435.0" prefHeight="60.0" prefWidth="260.0" promptText="year started">
                      <font>
-                        <Font name="Times New Roman" size="20.0" />
+                        <Font size="16.0" />
                      </font></TextField>
                   <TextField fx:id="squareAreaField" layoutX="78.0" layoutY="562.0" prefHeight="60.0" prefWidth="260.0" promptText="square area">
                      <font>
-                        <Font name="Times New Roman" size="20.0" />
+                        <Font size="16.0" />
                      </font></TextField>
-                  <CheckBox layoutX="453.0" layoutY="200.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="176.0" text="Name" textFill="#ede8e8">
+                  <CheckBox fx:id="nameCheckbox" layoutX="453.0" layoutY="200.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="176.0" text="Name" textFill="#ede8e8">
                      <font>
-                        <Font name="System Bold" size="25.0" />
+                        <Font name="System Bold" size="16.0" />
                      </font></CheckBox>
-                  <CheckBox layoutX="453.0" layoutY="319.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="176.0" text="Country" textFill="#ede8e8">
+                  <CheckBox fx:id="countryCheckbox" layoutX="453.0" layoutY="319.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="176.0" text="Country" textFill="#ede8e8">
                      <font>
-                        <Font name="System Bold" size="25.0" />
+                        <Font name="System Bold" size="16.0" />
                      </font></CheckBox>
-                  <CheckBox layoutX="453.0" layoutY="435.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="176.0" text="Year" textFill="#ede8e8">
+                  <CheckBox fx:id="yearCheckbox" layoutX="453.0" layoutY="435.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="176.0" text="Year" textFill="#ede8e8">
                      <font>
-                        <Font name="System Bold" size="25.0" />
+                        <Font name="System Bold" size="16.0" />
                      </font></CheckBox>
-                  <CheckBox layoutX="453.0" layoutY="562.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="176.0" text="Sq Area" textFill="#ede8e8">
+                  <CheckBox fx:id="areaCheckbox" layoutX="453.0" layoutY="562.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="176.0" text="Sq Area" textFill="#ede8e8">
                      <font>
-                        <Font name="System Bold" size="25.0" />
+                        <Font name="System Bold" size="16.0" />
                      </font></CheckBox>
                   <Label layoutX="89.0" layoutY="86.0" prefHeight="38.0" prefWidth="364.0" text="Register Observatory" textAlignment="CENTER" textFill="#fdf7f7">
                      <font>
-                        <Font name="Verdana Bold" size="30.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                   </Label>
-                  <Button fx:id="registerButton" layoutX="247.0" layoutY="696.0" mnemonicParsing="false"  onMouseClicked="#newButtonClick" prefHeight="43.0" prefWidth="200.0" style="-fx-background-color: #696969;" text="Register" textAlignment="CENTER" textFill="#fdf7f7">
+                  <Button fx:id="registerButton" layoutX="247.0" layoutY="696.0" mnemonicParsing="false" onMouseClicked="#newButtonClick" prefHeight="43.0" prefWidth="200.0" style="-fx-background-color: #696969;" text="Register" textAlignment="CENTER" textFill="#fdf7f7">
                      <font>
                         <Font name="Verdana Bold" size="14.0" />
                      </font>
@@ -104,7 +104,7 @@
                         <Image url="@The%20Brothers%20(1).png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="76.0" layoutY="487.0" prefHeight="153.0" prefWidth="562.0" text="“No other continent has endured such an unspeakably bizarre combination of foreign thievery and foreign goodwill.”― Barbara Kingsolver, The Poisonwood Bible. Terra Saves the Earth" textAlignment="CENTER">
+                  <Label layoutX="136.0" layoutY="487.0" prefHeight="153.0" prefWidth="447.0" text="In 2016, Ghana lost $2.3 Billion to illegal mining." textAlignment="JUSTIFY">
                      <font>
                         <Font name="Times New Roman" size="18.0" />
                      </font>

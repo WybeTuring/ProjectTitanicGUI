@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import titanic.app.address.model.Monitoring;
 import titanic.app.address.view.sampleController;
 
 public class MainApp extends Application{
@@ -21,6 +22,7 @@ public class MainApp extends Application{
     
 	public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
+        this.primaryStage.setResizable(false);
         this.primaryStage.setTitle("The Terra Observatory");
 
         initRootLayout();
@@ -76,6 +78,7 @@ public class MainApp extends Application{
     public BorderPane getRootLayout() {
     	return rootLayout;
     }
+    
     
     public static void main(String[] args) {
         launch(args);
