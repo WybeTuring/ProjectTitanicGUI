@@ -102,8 +102,8 @@ public class DatabaseConnection {
         try {
             System.out.println ("Creating statement...");
             String sql;
-            PreparedStatement ps = conn.prepareStatement( "select observeName,vegColour,colourValue,lat,longi, eventYear " +
-                    "FROM GALAMSEY WHERE colourValue > ?");
+            PreparedStatement ps = conn.prepareStatement( "select observeName,vegColour,colourValue,lat,longi,eventYear " +
+                                                                  "FROM GALAMSEY WHERE colourValue > ?");
             ps.setString (1, String.valueOf (number));
             resultSet = ps.executeQuery ();
 
@@ -131,7 +131,7 @@ public class DatabaseConnection {
 
     public void listObservatories () {
         try {
-            System.out.println ("Creating statement...");
+            System.out.println ("Listing Observatories...");
             createStatement = conn.createStatement ();
             String sql;
             sql = "SELECT name,country,startYear,area " +
@@ -142,7 +142,7 @@ public class DatabaseConnection {
             while (resultSet.next ()) {
                 //Retrieve by column name
                 String name = resultSet.getString ("name");
-                String country= resultSet.getString ("country");
+                String country = resultSet.getString ("country");
                 int year = resultSet.getInt ("startYear");
                 int area = resultSet.getInt ("area");
 
@@ -157,9 +157,34 @@ public class DatabaseConnection {
             e.printStackTrace ();
         }
     }
-    public  static  void main(String args []){
-        DatabaseConnection kay = new DatabaseConnection ();
-        kay.listObservatories ();
+
+    public void listGalamsey () {
+        try {
+            System.out.println ("Listing Galamsey...");
+            String sql;
+            PreparedStatement ps = conn.prepareStatement( "select observeName,vegColour,colourValue,lat,longi,eventYear " +
+                                                                  "FROM GALAMSEY");
+            resultSet = ps.executeQuery ();
+
+            // Extract data from result set
+            while (resultSet.next ()) {
+                //Retrieve by column name
+                String observeName = resultSet.getString ("observeName");
+                String vegColour = resultSet.getString ("vegColour");
+                int colValue = resultSet.getInt ("colourValue");
+                String latitude = resultSet.getString ("lat");
+                String longitude = resultSet.getString ("longi");
+                String eventYear = resultSet.getString ("eventYear");
+
+                String results = observeName + "\t" + vegColour + "\t" + colValue + "\t" + latitude + "\t" + longitude +"\t" + eventYear;
+
+                System.out.println (results + "\n");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace ();
+        }
     }
+
 
 }
