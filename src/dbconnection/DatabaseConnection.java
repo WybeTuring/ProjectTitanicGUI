@@ -2,7 +2,13 @@ package dbconnection;
 
 import java.sql.*;
 import java.time.Year;
-
+/**
+ * This is a database connection class,
+ * which connects to a local instance of a mySQL.
+ * The database connects to the GUI for the Terra Observatory.
+ * The database allows a user to register a new galamsey event, register new
+ * observatories and view some defined statistical information defined by the team.
+ */
 public class DatabaseConnection {
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -10,19 +16,23 @@ public class DatabaseConnection {
 
     //  Database credentials
     static final String USER = "root";
-    static final String PASS = "admin";
+    static final String PASS = "root";
 
     //Connection tools
     Connection conn;
     Statement createStatement;
     ResultSet resultSet;
 
+    /**
+     * An overloaded  constructor for the connection class
+     * The constructor registers and establishes a database connection
+     */
     public DatabaseConnection() {
 
         try {
             //Registering a connection
             Class.forName ("com.mysql.cj.jdbc.Driver");
-            System.out.println ("Connecting to a selected database illegal mining database");
+            System.out.println ("Connecting to the Terra Database");
             //Opening a database connection
             conn = DriverManager.getConnection (DB_URL, USER, PASS);
             System.out.println ("Connected database successfully...");
@@ -35,6 +45,16 @@ public class DatabaseConnection {
 
     }
 
+    /**
+     *
+     * @param observeNameInput The name of the observatory which recorded the manual event
+     * @param vegColourInput The vegetation colour recorded which is a string
+     * @param colourValueInput The colour value associated with a valid vegetation colour
+     * @param latInput
+     * @param longiInput
+     * @param eventYearInput
+     * @return
+     */
     public Boolean registerGalamseyEvents(String observeNameInput, String vegColourInput, String colourValueInput, Float latInput, Float longiInput, int eventYearInput) {
         try {
             System.out.println ("Inserting records into the galamsey table.");
