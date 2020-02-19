@@ -17,4 +17,5 @@ The software specification is as follows;
 - javafx 8
 - jdk 8
 
-- 
+# Running the code
+To run the code
