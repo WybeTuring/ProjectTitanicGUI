@@ -139,7 +139,7 @@ public class DatabaseConnection {
      * A query method which returns all galamsey events
      * greater than the given input. An number greater than 3 returns no events
      * @param number the number to request events greater than
-     * @return the return type is a ResultSet which is used by the Terra GUI to present statistical
+     * @return the return type is a ResultSet which is used by the Terra GUI to present statistical information
      */
     public void ArbitaryGalamseyEvent(int number) {
         try {
@@ -171,7 +171,12 @@ public class DatabaseConnection {
     }
 
 
-
+    /**
+     * A method which queries the Terra database
+     * and displays to the Terra GUI the list of registered observatories
+     *
+     * @return the return type is a ResultSet which is used by the Terra GUI to present statistical information
+     */
     public void listObservatories () {
         try {
             System.out.println ("Listing Observatories...");
@@ -201,6 +206,12 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * A method which queries the Terra database
+     * and displays to the Terra GUI the list of registered galamsey events
+     *
+     * @return the return type is a ResultSet which is used by the Terra GUI to present statistical information
+     */
     public void listGalamsey () {
         try {
             System.out.println ("Listing Galamsey...");
