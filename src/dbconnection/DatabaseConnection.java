@@ -46,14 +46,16 @@ public class DatabaseConnection {
     }
 
     /**
+     * A query method which registers a galamsey event inputed
+     * from the Terra GUI into the Terra database
      *
      * @param observeNameInput The name of the observatory which recorded the manual event
      * @param vegColourInput The vegetation colour recorded which is a string
      * @param colourValueInput The colour value associated with a valid vegetation colour
-     * @param latInput
-     * @param longiInput
-     * @param eventYearInput
-     * @return
+     * @param latInput The latitude position associated with the event
+     * @param longiInput The longitude position associated with the event
+     * @param eventYearInput The year which the event was recorded
+     * @return a bollean value to give an indication if the operation succeeded
      */
     public Boolean registerGalamseyEvents(String observeNameInput, String vegColourInput, String colourValueInput, Float latInput, Float longiInput, int eventYearInput) {
         try {
@@ -76,6 +78,16 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * A query method which registers a new observatory inputted
+     * from the Terra GUI into the Terra database
+     *
+     * @param nameInput The name of the new observatory
+     * @param countryInput The country where the observatory is located
+     * @param startYearInput The year the observatory started
+     * @param areaInput The area the observatory covers
+     * @return
+     */
     public Boolean registerObservatories(String nameInput,String countryInput,int startYearInput,int areaInput) {
         try {
             System.out.println ("Inserting records into the observatories table.");
@@ -95,6 +107,11 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * A query which returns the largest colour value ever
+     * recorded by the Galamsey table
+     * @return An integer indicating the value, which is never greater than 3
+     */
     public Integer largestGalamseyEvent() {
         try {
             System.out.println ("Creating statement...");
@@ -118,6 +135,12 @@ public class DatabaseConnection {
         return -1; //query failed
     }
 
+    /**
+     * A query method which returns all galamsey events
+     * greater than the given input. An number greater than 3 returns no events
+     * @param number the number to request events greater than
+     * @return the return type is a ResultSet which is used by the Terra GUI to present statistical
+     */
     public void ArbitaryGalamseyEvent(int number) {
         try {
             System.out.println ("Creating statement...");
@@ -205,6 +228,4 @@ public class DatabaseConnection {
             e.printStackTrace ();
         }
     }
-
-
 }
