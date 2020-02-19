@@ -32,15 +32,14 @@ public class DatabaseConnection {
         try {
             //Registering a connection
             Class.forName ("com.mysql.cj.jdbc.Driver");
-            System.out.println ("Connecting to the Terra Database");
             //Opening a database connection
             conn = DriverManager.getConnection (DB_URL, USER, PASS);
-            System.out.println ("Connected database successfully...");
+            
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace ();
         } catch (SQLException e) {
-            e.printStackTrace ();
+          
         }
 
     }
@@ -59,7 +58,7 @@ public class DatabaseConnection {
      */
     public Boolean registerGalamseyEvents(String observeNameInput, String vegColourInput, String colourValueInput, Float latInput, Float longiInput, int eventYearInput) {
         try {
-            System.out.println ("Inserting records into the galamsey table.");
+            
 
             PreparedStatement ps = conn.prepareStatement("INSERT INTO GALAMSEY (observeName,vegColour,colourValue,lat,longi, eventYear) VALUES(?,?,?,?,?,?)");
             ps.setString (1,observeNameInput);
@@ -72,8 +71,7 @@ public class DatabaseConnection {
             }
             return true;
         } catch (SQLException e) {
-            System.out.println ("Data insertion failed, check input failed");
-            e.printStackTrace ();
+            
             return false;
         }
     }
@@ -90,7 +88,7 @@ public class DatabaseConnection {
      */
     public Boolean registerObservatories(String nameInput,String countryInput,int startYearInput,int areaInput) {
         try {
-            System.out.println ("Inserting records into the observatories table.");
+            
             PreparedStatement ps = conn.prepareStatement("INSERT INTO OBSERVATORY (name,country,startYear,area) VALUES(?,?,?,?)");
             ps.setString (1,nameInput);
             ps.setString(2,countryInput);
@@ -101,8 +99,7 @@ public class DatabaseConnection {
             return true;
         }
         catch (SQLException e) {
-            System.out.println ("Data insertion failed, check input failed");
-            e.printStackTrace ();
+         
             return false;
         }
     }
@@ -114,7 +111,7 @@ public class DatabaseConnection {
      */
     public Integer largestGalamseyEvent() {
         try {
-            System.out.println ("Creating statement...");
+           
             createStatement = conn.createStatement ();
             String sql;
             sql = "SELECT MAX(colourValue) FROM  GALAMSEY";
@@ -130,7 +127,7 @@ public class DatabaseConnection {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace ();
+            
         }
         return -1; //query failed
     }
@@ -141,9 +138,10 @@ public class DatabaseConnection {
      * @param number the number to request events greater than
      * @return the return type is a ResultSet which is used by the Terra GUI to present statistical information
      */
-    public void ArbitaryGalamseyEvent(int number) {
+    public ResultSet ArbitaryGalamseyEvent(int number) {
+    	ResultSet result = null;
         try {
-            System.out.println ("Creating statement...");
+            
             String sql;
             PreparedStatement ps = conn.prepareStatement( "select observeName,vegColour,colourValue,lat,longi,eventYear " +
                                                                   "FROM GALAMSEY WHERE colourValue > ?");
