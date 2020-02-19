@@ -1,3 +1,9 @@
+/**
+ * Database connection for version  2 for Project Titanic
+ * @author Kweku Yamoah
+ * @version 2.0.0
+ */
+
 package dbconnection;
 
 import java.sql.*;
