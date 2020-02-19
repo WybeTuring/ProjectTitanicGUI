@@ -2,10 +2,10 @@ package dbconnection;
 
 import java.sql.*;
 import java.time.Year;
-<<<<<<< HEAD
+
 import java.util.Set;
 
-=======
+
 /**
  * This is a database connection class,
  * which connects to a local instance of a mySQL.
@@ -13,7 +13,7 @@ import java.util.Set;
  * The database allows a user to register a new galamsey event, register new
  * observatories and view some defined statistical information defined by the team.
  */
->>>>>>> branch 'master' of https://github.com/WybeTuring/ProjectTitanicGUI.git
+
 public class DatabaseConnection {
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -37,10 +37,7 @@ public class DatabaseConnection {
         try {
             //Registering a connection
             Class.forName ("com.mysql.cj.jdbc.Driver");
-<<<<<<< HEAD
-=======
             System.out.println ("Connecting to the Terra Database");
->>>>>>> branch 'master' of https://github.com/WybeTuring/ProjectTitanicGUI.git
             //Opening a database connection
             conn = DriverManager.getConnection (DB_URL, USER, PASS);
 
@@ -51,10 +48,6 @@ public class DatabaseConnection {
         }
 
     }
-
-<<<<<<< HEAD
-    public Boolean registerGalamseyEvents(String observeNameInput, String vegColourInput, int colourValueInput, Double latInput, Double longiInput, int eventYearInput) {
-=======
     /**
      * A query method which registers a galamsey event inputed
      * from the Terra GUI into the Terra database
@@ -67,8 +60,10 @@ public class DatabaseConnection {
      * @param eventYearInput The year which the event was recorded
      * @return a bollean value to give an indication if the operation succeeded
      */
-    public Boolean registerGalamseyEvents(String observeNameInput, String vegColourInput, String colourValueInput, Float latInput, Float longiInput, int eventYearInput) {
->>>>>>> branch 'master' of https://github.com/WybeTuring/ProjectTitanicGUI.git
+
+    public Boolean registerGalamseyEvents(String observeNameInput, String vegColourInput, int colourValueInput, Double latInput, Double longiInput, int eventYearInput) {
+
+
         try {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO GALAMSEY (observeName,vegColour,colourValue,lat,longi, eventYear) VALUES(?,?,?,?,?,?)");
             ps.setString (1,observeNameInput);
@@ -85,10 +80,6 @@ public class DatabaseConnection {
             return false;
         }
     }
-
-<<<<<<< HEAD
-    public Boolean registerObservatories(String nameInput,String countryInput,int startYearInput,float areaInput) {
-=======
     /**
      * A query method which registers a new observatory inputted
      * from the Terra GUI into the Terra database
@@ -97,10 +88,12 @@ public class DatabaseConnection {
      * @param countryInput The country where the observatory is located
      * @param startYearInput The year the observatory started
      * @param areaInput The area the observatory covers
-     * @return
+     * @return a boolean indicating the end result of the operation
      */
-    public Boolean registerObservatories(String nameInput,String countryInput,int startYearInput,int areaInput) {
->>>>>>> branch 'master' of https://github.com/WybeTuring/ProjectTitanicGUI.git
+
+    public Boolean registerObservatories(String nameInput,String countryInput,int startYearInput,float areaInput) {
+
+
         try {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO OBSERVATORY (name,country,startYear,area) VALUES(?,?,?,?)");
             ps.setString (1,nameInput);
@@ -142,18 +135,15 @@ public class DatabaseConnection {
         return -1; //query failed
     }
 
-<<<<<<< HEAD
-    public ResultSet ArbitaryGalamseyEvent(int number) {
-    	ResultSet resultSet = null;
-=======
     /**
      * A query method which returns all galamsey events
      * greater than the given input. An number greater than 3 returns no events
      * @param number the number to request events greater than
      * @return the return type is a ResultSet which is used by the Terra GUI to present statistical information
      */
-    public void ArbitaryGalamseyEvent(int number) {
->>>>>>> branch 'master' of https://github.com/WybeTuring/ProjectTitanicGUI.git
+    public ResultSet ArbitaryGalamseyEvent(int number) {
+    	ResultSet resultSet = null;
+
         try {
             
             String sql;
@@ -169,47 +159,33 @@ public class DatabaseConnection {
     }
 
 
-<<<<<<< HEAD
-
-    public ResultSet listObservatories () {
-    	ResultSet resultSet = null;
-=======
     /**
      * A method which queries the Terra database
      * and displays to the Terra GUI the list of registered observatories
      *
      * @return the return type is a ResultSet which is used by the Terra GUI to present statistical information
      */
-    public void listObservatories () {
->>>>>>> branch 'master' of https://github.com/WybeTuring/ProjectTitanicGUI.git
+    public ResultSet listObservatories () {
+    	ResultSet resultSet = null;
         try {
-<<<<<<< HEAD
-       
-=======
             System.out.println ("Listing Observatories...");
->>>>>>> branch 'master' of https://github.com/WybeTuring/ProjectTitanicGUI.git
             createStatement = conn.createStatement ();
             String sql;
             sql = "SELECT name,country,startYear,area " +
                     "FROM OBSERVATORY;";
             resultSet = createStatement.executeQuery (sql);
 
-<<<<<<< HEAD
         } catch (SQLException e) {
            
         }
         return resultSet;
     }
-=======
-            // Extract data from result set
-            while (resultSet.next ()) {
-                //Retrieve by column name
-                String name = resultSet.getString ("name");
-                String country = resultSet.getString ("country");
-                int year = resultSet.getInt ("startYear");
-                int area = resultSet.getInt ("area");
->>>>>>> branch 'master' of https://github.com/WybeTuring/ProjectTitanicGUI.git
-
+    /**
+     * A method which queries the Terra database
+     * and displays to the Terra GUI the list of registered galamsey events
+     *
+     * @return the return type is a ResultSet which is used by the Terra GUI to present statistical information
+     */
     public ResultSet listGalamsey () {
     	ResultSet resultSet = null;
         try {
@@ -220,43 +196,7 @@ public class DatabaseConnection {
         } catch (SQLException e) {
             
         }
-<<<<<<< HEAD
        return resultSet;
-=======
->>>>>>> branch 'master' of https://github.com/WybeTuring/ProjectTitanicGUI.git
     }
 
-    /**
-     * A method which queries the Terra database
-     * and displays to the Terra GUI the list of registered galamsey events
-     *
-     * @return the return type is a ResultSet which is used by the Terra GUI to present statistical information
-     */
-    public void listGalamsey () {
-        try {
-            System.out.println ("Listing Galamsey...");
-            String sql;
-            PreparedStatement ps = conn.prepareStatement( "select observeName,vegColour,colourValue,lat,longi,eventYear " +
-                                                                  "FROM GALAMSEY");
-            resultSet = ps.executeQuery ();
-
-            // Extract data from result set
-            while (resultSet.next ()) {
-                //Retrieve by column name
-                String observeName = resultSet.getString ("observeName");
-                String vegColour = resultSet.getString ("vegColour");
-                int colValue = resultSet.getInt ("colourValue");
-                String latitude = resultSet.getString ("lat");
-                String longitude = resultSet.getString ("longi");
-                String eventYear = resultSet.getString ("eventYear");
-
-                String results = observeName + "\t" + vegColour + "\t" + colValue + "\t" + latitude + "\t" + longitude +"\t" + eventYear;
-
-                System.out.println (results + "\n");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace ();
-        }
-    }
 }
