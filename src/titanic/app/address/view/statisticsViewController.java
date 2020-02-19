@@ -1,5 +1,10 @@
 package titanic.app.address.view;
 
+/**
+ * This class controls the statistics view pane, and makes sure that the switching of the pages is well synchronized.
+ * @author wybeturing
+ * @version 1.1
+ */
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,6 +25,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import titanic.app.address.MainApp;
+
 
 public class statisticsViewController {
 
@@ -75,6 +81,12 @@ private MainApp mainApp;
 		  return str.matches("-?\\d+(\\.\\d+)?"); 
 		}
     
+    
+    /**
+     * An event method that deals with the back button
+     * @param event Which in this case is a mouse click event.
+     * @throws IOException 
+     */
     public void chooseViewAction(ActionEvent event) throws IOException {
         Button button = (Button) event.getSource();
         String buttonId = button.getId();
@@ -93,6 +105,10 @@ private MainApp mainApp;
         
     }
     
+    /**
+     * This method reacts to the methods that are called when the statistics view pane is being used. 
+     * @param event
+     */
     public void newButtonClick(MouseEvent event) {
     	Button button = (Button) event.getSource();
         String buttonId = button.getId();

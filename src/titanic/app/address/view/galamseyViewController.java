@@ -1,5 +1,11 @@
 package titanic.app.address.view;
 
+/**
+ * This controller controls the galamseyView.fxml and makes sure that page rendering is perfect. 
+ * @author wybeturing 
+ * @version 1.0
+ * 
+ */
 
 import java.io.IOException;
 import java.sql.*;
@@ -21,6 +27,11 @@ import titanic.app.address.model.Galamsey;
 import titanic.app.address.model.Observatory;
 import titanic.app.address.model.Position;
 
+/**
+ * This class gets connections with all the fxml elements in the galamseyView.fxml and enables us to make changes and listen for events.
+ * @author wybeturing
+ *
+ */
 public class galamseyViewController {
     
     @FXML
@@ -78,6 +89,11 @@ public class galamseyViewController {
         this.mainApp = mainApp;
     }
     
+    /**
+     * Listens to events that will most often deal with the back button.
+     * @param event
+     * @throws IOException
+     */
     public void chooseViewAction(ActionEvent event) throws IOException {
         Button button = (Button) event.getSource();
         String buttonId = button.getId();
@@ -104,6 +120,10 @@ public class galamseyViewController {
 		  return str.matches("-?\\d+(\\.\\d+)?"); 
 		}
     
+    /**
+     * This method deals with the registration to the database.
+     * @param event Which in this case is a mouse click event.
+     */
     public void newButtonClick(MouseEvent event) {
     	
     	String observatoryName = observatoryNameField.getText();

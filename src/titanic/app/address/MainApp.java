@@ -1,5 +1,9 @@
 package titanic.app.address;
 
+/**
+ * This class contains the main method that starts our application and confirms that the controllers and the elements in the stage are being 
+ * switched correctly .
+ */
 import java.io.IOException;
 import javafx.stage.Stage;
 import javafx.application.Application;
@@ -11,6 +15,11 @@ import javafx.scene.layout.BorderPane;
 import titanic.app.address.model.Monitoring;
 import titanic.app.address.view.sampleController;
 
+/**
+ * The main class.
+ * @author wybeturing
+ *
+ */
 public class MainApp extends Application{
 
     private Stage primaryStage;
@@ -19,7 +28,9 @@ public class MainApp extends Application{
     public MainApp() {
     	
     }
-    
+    /**
+  		Starts the application life cycle and intializes the stage and the first scene. 
+     */
 	public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setResizable(false);
