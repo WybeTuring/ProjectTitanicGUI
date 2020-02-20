@@ -155,7 +155,7 @@ public class galamseyViewController {
 				alert1.showAndWait();
 				vegetationColourField.setText("");
 			}
-			if(!colourValue.equals("") && (colourValue != "1" || colourValue != "2" || colourValue != "3") ){
+			if(!colourValue.equals("") && (colourValue != "1" && colourValue != "2" && colourValue != "3") ){
 				Alert alert1 = new Alert(AlertType.NONE);
 				alert1.setAlertType(AlertType.ERROR);
 				alert1.setContentText("Colour Values can only be 1, 2, or 3");
@@ -173,7 +173,7 @@ public class galamseyViewController {
 			alert1.showAndWait();
 			vegetationColourField.setText("");
     	}
-    	else if(Double.parseDouble(colourValue) != 1 && Double.parseDouble(colourValue) != 2 && Double.parseDouble(colourValue) == 3) {
+    	else if(Double.parseDouble(colourValue) != 1 && Double.parseDouble(colourValue) != 2 && Double.parseDouble(colourValue) != 3) {
     		Alert alert1 = new Alert(AlertType.NONE);
 			alert1.setAlertType(AlertType.ERROR);
 			alert1.setContentText("Colour Values can only be 1, 2, or 3");

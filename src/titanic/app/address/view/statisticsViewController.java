@@ -169,17 +169,17 @@ private MainApp mainApp;
         else if(buttonId.equals("totalNumberOfObservatories")) {
         	resultsTestArea.setText("");
         	ResultSet resultSet = dataBase.listObservatories();
-        	 try {
+        	String result = String.format("%-40s" + "\t" + "%-20s" + "\t" + "%-6s" + "\t" + "%-6s", "Observatory Name", "Country", "Year", "Area");
+        	resultsTestArea.appendText(result + "\n\n"); 
+        	try {
 				while (resultSet.next ()) {
 				     //Retrieve by column name
 				     String name = resultSet.getString ("name");
 				     String country= resultSet.getString ("country");
 				     int year = resultSet.getInt ("startYear");
 				     int area = resultSet.getInt ("area");
-
-
-				     String results = name + "\t\t\t" + country + "\t\t\t" + year + "\t\t\t" + area;
-				     resultsTestArea.appendText(results + "\n");
+				     String results2 = String.format("%-40s" + "\t" + "%-20s" + "\t" + "%-6d" + "\t" + "%-6d", name, country, year, area);
+				     resultsTestArea.appendText(results2 + "\n");
 
 				 }
 			} catch (SQLException e) {
@@ -191,6 +191,10 @@ private MainApp mainApp;
         else if(buttonId.equals("totalNumberOfGalamseyRecorded")) {
         	resultsTestArea.setText("");
         	ResultSet resultSet = dataBase.listGalamsey();
+        	String result = String.format("%-40s" + "\t" + "%-20s" + "\t" + "%-14s" + "\t" + "%-10s" + 
+        	"\t" + "%-10s" + "\t" + "%-6s", 
+        	"Observatory Name", "Vegetation Colour", "Colour Value", "Latitude", "Longitude", "Year");
+        	resultsTestArea.appendText(result + "\n\n");
         	 try {
 				while (resultSet.next ()) {
 				     //Retrieve by column name
@@ -202,7 +206,11 @@ private MainApp mainApp;
 				     String eventYear = resultSet.getString ("eventYear");
 
 				     String results = observeName + "\t\t" + vegColour + "\t\t" + colValue + "\t\t" + latitude + "\t\t" + longitude +"\t\t" + eventYear;
-				     resultsTestArea.appendText(results + "\n");
+				     String result1 = String.format("%-40s" + "\t" + "%-20s" + "\t" + "%-14d" + "\t" +
+				     "%-10s" + "\t" + "%-10s" + "\t" + "%-6s", 
+				     observeName, vegColour, colValue, latitude,longitude, eventYear);
+				     resultsTestArea.appendText(result1 + "\n");
+				     
 				 }
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
