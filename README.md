@@ -19,9 +19,18 @@ The software specification is as follows;
 - jdk 8
 
 # Running the code
-To run the code
-=======
-# ProjectTitanicGUI
+To run the code;
+1. Clone the repository
+2. Navigate to ProjectTitanicGUI/src
+3. Install the deb file (Ubuntu)
+4. Ensure that for your Mysql instance, the user "root" has a password of "root".
+5. Go to the installed programs and run the application named "terra-observatory-manager".
+6. In case this does not work, it must be as a result of the java development set up on your locale machine.
+
+LAST RESORT
+1. Clone the repository
+2. Import as an Eclipse project and run from eclipse.
+
 
 This is Version 2 of the ProjectTitanic project, hosted on [GitHub](https://github.com/WybeTuring/ProjectTitanic.html).
 This aim of this project is to design and build a software that enables policy makers and regulators to tract illegal mining (Hereafter referred to as Galamsey) across the world
