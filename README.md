@@ -1,6 +1,6 @@
 # ProjectTitanicGUI
 
-<<<<<<< HEAD
+
 This is Version 2 of the ProjectTitanic project, hosted on [GitHub](https://github.com/WybeTuring/ProjectTitanic.html).
 This aim of this project is to design and build a software that enables policy makers and regulators to tract illegal mining (Hereafter referred to as Galamsey) across the world
 
@@ -42,5 +42,4 @@ The software specification is as follows;
 
 # Running the code
 To run the code
-
->>>>>>> branch 'master' of https://github.com/WybeTuring/ProjectTitanicGUI.git
+- Please run the code as an eclipse project. 
